@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  openresty:
+    image: openresty/openresty:1.19.9.1-5-alpine-fat
+    ports:
+      - mode: host
+        protocol: tcp
+        published: 80
+        target: 80
+      - mode: host
+        protocol: tcp
+        published: 443
+        target: 443
+    volumes:
+      - /vol/openresty-project/demo:/usr/local/openresty/nginx/conf
+      
